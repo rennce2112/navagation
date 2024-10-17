@@ -1,0 +1,435 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    
+}/*
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensures the nav is on top 
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.page {
+    height: 100vh; /* Full viewport height 
+    width: 100vw; /* Full viewport width 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Start as invisible 
+    transition: opacity 0.5s ease; /* Transition for fade effect 
+    position: absolute; /* Positioning to overlap pages 
+    top: 0; /* Align to the top of the viewport 
+    left: 0; /* Align to the left of the viewport 
+}*/
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+    display: none;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #cc3300;
+    color: #fff5e6;
+    opacity: 0.85;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items {
+    order: 2;
+    display: flex;
+}
+
+.logo {
+    order: 1;
+    font-size: 2.3rem;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.navbar a {
+    color: #fff5e6;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar a:hover {
+    color: #cc3300;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.selection-container {
+    width: 100%;
+    height: 100vh;
+    padding-top: 64px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.page:target{
+    opacity: 1;
+}
+#page1 {
+    background-image: url("/photo/bk.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#page2 {
+    background-color: #ff7519;
+}
+
+#page3 {
+    background-color: #ff8533;
+}
+
+#page4 {
+    background-color: #ff944d;
+}
+
+#page5 {
+    background-color: #ffa366;
+}
+
+#page6 {
+    background-color: #ffb380;
+}
+
+#page7 {
+    background-color: #ffc299;
+}
+
+#page8 {
+    background-color: #ffd1b3;
+}
+#page1:target,#page2:target,#page3:target,#page4:target,#page5:target,#page6:target,#page7:target,#page8:target{
+    opacity: 1;
+}
+.pagination {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    background-color: #ddd;
+    text-decoration: none;
+    color: #cc3300;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #ffffff;
+}
+
+.page-1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.page-1 h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.page-1 p {
+    font-size: 2.2rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* General container styles */
+.profile-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffcc99;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+}
+
+.photo {
+    width: 40vw;
+    height: 40vw;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details {
+    text-align: center;
+    background-color: #ff9933;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.programming-languages input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.extra-info, .extra-info1 {
+    background-color: #ffcc99;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Animation styles */
+.animate-fade-out {
+    opacity: 0;
+   
+    animation: fadeIn 3s forwards;
+}
+.animate-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeIn 3s forwards;
+}
+
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 3s forwards;
+    animation-delay: 5s;
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .profile-card, .extra-info, .extra-info1 {
+        width: 90%;
+    }
+
+    .photo {
+        width: 50vw;
+        height: 50vw;
+        max-width: 150px;
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card, .extra-info, .extra-info1 {
+        width: 95%;
+    }
+
+    .photo {
+        width: 60vw;
+        height: 60vw;
+        max-width: 120px;
+        max-height: 120px;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-grid {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        display: block; /* Stack profile cards vertically */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        opacity: 0.95;
+    }
+
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines {
+        display: block;
+    }
+
+    .navbar-container {
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"] {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines {
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #ffffff;
+    }
+
+    .navbar .menu-items {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: #052b36;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+        left: 0;
+    }
+
+    .navbar .menu-items li {
+        margin: 30px 0;
+    }
+}
